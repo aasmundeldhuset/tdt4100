@@ -1,0 +1,10 @@
+// The main method in the chess task is terribly long.
+// It would be better to split it into several methods, 
+// so that the main method ends up looking approximately like this:
+
+do {
+	String[] fromTo = readInput();
+	performMove(fromTo);
+	switchPlayer();
+	isCheckmate();
+} while (!isGameOver());

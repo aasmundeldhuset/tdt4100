@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            prefHeight="500" prefWidth="500" fx:controller="gui.Controller">
+    <top>
+        <TextField id="textField" text="center"/>
+    </top>
+    <center>
+        <Pane>
+            <Line startX="10" startY="10" endX="100" endY="100">
+                <strokeDashArray>
+                    <Double fx:value="10"/>
+                    <Double fx:value="10"/>
+                </strokeDashArray>
+            </Line>
+            <Rectangle x="150" y="10" width="30" height="40" fill="blue" onMouseClicked="#handle"/>
+            <Ellipse centerX="40" centerY="180" radiusX="40" radiusY="30" strokeWidth="5" fill="green" stroke="red"/>
+            <Text id="centerText" x="180" y="180" text="center">
+                <font>
+                    <Font name="Times" size="32"/>
+                </font>
+            </Text>
+        </Pane>
+    </center>
+
+    <left>
+        <Text text="left"/>
+    </left>
+
+    <right>
+        <Text text="right"/>
+    </right>
+
+    <bottom>
+        <Text text="bottom"/>
+    </bottom>
+
+</BorderPane>
