@@ -1,3 +1,5 @@
+package misc;
+
 public class Loops {
     public static void main(String[] args) {
         double[] numbers = new double[]{3.4, 8.9, 6.1, 2.7, 5.5};
@@ -7,15 +9,15 @@ public class Loops {
             i++;
         }
         System.out.println(i);
-        
+
         for (int j = 0; j < numbers.length; j++) {
             System.out.println(numbers[j]);
         }
-        
+
         System.out.println("Done");
     }
-    
-    
+
+
     public static double sum(double[] numbers) {
         double result = 0;
         for (int i = 0; i < numbers.length; i++) {
@@ -23,7 +25,7 @@ public class Loops {
         }
         return result;
     }
-    
+
     public static int maxIndex(double[] numbers) {
         if (numbers.length == 0) {
             return -1;
@@ -36,7 +38,7 @@ public class Loops {
         }
         return index;
     }
-    
+
     public static boolean isPalindrome(String s) {
         for (int i = 0; i < s.length() / 2; i++) {
             if (s.charAt(i) != s.charAt(s.length() - 1 - i)) {

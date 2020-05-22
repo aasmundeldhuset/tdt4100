@@ -1,3 +1,5 @@
+package misc;
+
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -42,10 +44,10 @@ public class FileInputOutput {
             }
         } finally {
             if (sc != null) {
-                sc.close();                
+                sc.close();
             }
         }
-        
+
         BufferedWriter bufWriter = null;
         try {
             FileOutputStream out = new FileOutputStream("E:\\Private\\NTNU\\java\\report.txt");

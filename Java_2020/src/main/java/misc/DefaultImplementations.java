@@ -1,3 +1,5 @@
+package misc;
+
 public class DefaultImplementations {
 	public static void main(String[] args) {
 		J i = new A();
@@ -7,13 +9,13 @@ public class DefaultImplementations {
 
 interface I {
 	default void doSomething() {
-		System.out.println("I");
+		System.out.println("misc.I");
 	}
 }
 
 interface J {
 	default void doSomething() {
-		System.out.println("J");
+		System.out.println("misc.J");
 	}
 }
 

@@ -1,3 +1,5 @@
+package misc;
+
 import java.util.Scanner;
 
 public class Minesweeper {
@@ -10,7 +12,7 @@ public class Minesweeper {
         int[][] counts = new int[SIZE][SIZE];
         int mineCount = 0;
         int openedCount = 0;
-        
+
         for (int r = 0; r < mines.length; r++) {
             for (int c = 0; c < mines[r].length; c++) {
                 if (Math.random() < MINE_PROBABILITY) {
@@ -19,7 +21,7 @@ public class Minesweeper {
                 }
             }
         }
-        
+
         for (int r = 0; r < mines.length; r++) {
             for (int c = 0; c < mines[r].length; c++) {
                 int count = 0;
@@ -34,7 +36,7 @@ public class Minesweeper {
                 counts[r][c] = count;
             }
         }
-        
+
         while (true) {
             printBoard(mines, opened, counts);
             System.out.print("Row and column to open: ");
@@ -44,7 +46,7 @@ public class Minesweeper {
                 System.out.println("Invalid move!");
                 continue;
             }
-            
+
             opened[row][col] = true;
             openedCount++;
             if (mines[row][col]) {
@@ -56,10 +58,10 @@ public class Minesweeper {
                 break;
             }
         }
-        
+
         printBoard(mines, opened, counts);
     }
-    
+
     private static void printBoard(boolean[][] mines, boolean[][] opened, int[][] counts) {
         for (int r = 0; r < mines.length; r++) {
             for (int c = 0; c < mines[r].length; c++) {

@@ -1,3 +1,5 @@
+package misc;
+
 import junit.framework.TestCase;
 
 public class MyArrayListTest extends TestCase {

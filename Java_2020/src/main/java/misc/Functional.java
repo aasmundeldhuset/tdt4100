@@ -1,3 +1,5 @@
+package misc;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiFunction;
@@ -10,15 +12,15 @@ public class Functional {
 		numbers.add(9);
 		numbers.add(-4);
 		numbers.add(3);
-		
+
 		printModified(numbers, Functional::twice);
 		printModified(numbers, Functional::square);
 	}
-	
+
 	public static int square(int x) {
 		return x * x;
 	}
-	
+
 	public static Integer twice(Integer x) {
 		if (x == null) {
 			return null;
@@ -26,7 +28,7 @@ public class Functional {
 			return x * 2;
 		}
 	}
-	
+
 	public static void printModified(
 			List<Integer> numbers,
 			Function<Integer, Integer> func) {
@@ -34,15 +36,15 @@ public class Functional {
 			System.out.println(func.apply(numbers.get(i)));
 		}
 	}
-	
+
 	public static boolean greater(Integer a, Integer b) {
 		return a > b;
 	}
-	
+
 	public static boolean smaller(Integer a, Integer b) {
 		return a < b;
 	}
-	
+
 	public static void sort(
 			List<Integer> numbers,
 			BiFunction<Integer, Integer, Boolean> compare) {
@@ -52,7 +54,7 @@ public class Functional {
 					int temp = numbers.get(i);
 					numbers.set(i, numbers.get(j));
 					numbers.set(j, temp);
-				}				
+				}
 			}
 		}
 	}

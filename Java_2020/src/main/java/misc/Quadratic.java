@@ -1,3 +1,5 @@
+package misc;
+
 import java.util.Scanner;
 
 public class Quadratic {
@@ -7,14 +9,14 @@ public class Quadratic {
         double a = scanner.nextDouble();
         double b = scanner.nextDouble();
         double c = scanner.nextDouble();
-        
+
         // Calculation
         double[] x = solveQuadratic(434.8, a, c);
-        
+
         // Output
         System.out.println("There are " + x.length + " answers");
     }
-    
+
     public static double[] solveQuadratic(double a, double b, double c) {
         double underRoot = b * b - 4 * a * c;
         double[] x;
@@ -29,7 +31,7 @@ public class Quadratic {
             x = new double[1];
             x[0] = -b / (2 * a);
         } else {
-            x = new double[0];        
+            x = new double[0];
         }
         return x;
     }

@@ -1,12 +1,11 @@
-import java.util.InputMismatchException;
-import java.util.Scanner;
+package misc;
 
 public class Program {
     public static void main(String[] args) throws NameException {
         Person p = new Person();
             p.setName("Ola");
         System.out.println(p.getName());
-        
+
 //        Scanner sc = new Scanner(System.in);
 //        while (true) {
 //            try {
@@ -23,24 +22,24 @@ public class Program {
 //            }
 //            System.out.println("Also done?");
 //        }
-        
-        
-//        Person p = new Person("", -53.2);
+
+
+//        misc.Person p = new misc.Person("", -53.2);
 //        if (p.setName("Ola")) {
 //            System.out.println("Success!");
 //        } else {
 //            System.out.println("Failure!");
 //        }
-        
-        
-        
-//        MyArrayList a = new MyArrayList();
+
+
+
+//        misc.MyArrayList a = new misc.MyArrayList();
 //        a.add(5);
 //        a.add(3);
 //        a.add(9);
 //        a.add(3.14);
 //        a.add(2.2456);
-//        
+//
 //        for (int i = 0; i < a.getSize(); i++) {
 //            System.out.println(a.get(i));
 //        }
