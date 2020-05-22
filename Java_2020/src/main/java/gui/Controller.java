@@ -3,13 +3,8 @@ package gui;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
-
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.stream.Collectors;
 
 public class Controller implements EventHandler<MouseEvent> {
 	private DoubleProperty value = new SimpleDoubleProperty(3);
