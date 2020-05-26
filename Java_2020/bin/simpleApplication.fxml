@@ -9,7 +9,18 @@
           fx:controller="gui.Controller">
     <Text text="${controller.value}" GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="4"/>
 
-    <Button text="0" GridPane.rowIndex="5" GridPane.columnIndex="1" onMouseClicked="#handle"/>
+    <Button text="7" GridPane.rowIndex="2" GridPane.columnIndex="1" onMouseClicked="#handleDigit"/>
+    <Button text="8" GridPane.rowIndex="2" GridPane.columnIndex="2" onMouseClicked="#handleDigit"/>
+    <Button text="9" GridPane.rowIndex="2" GridPane.columnIndex="3" onMouseClicked="#handleDigit"/>
+    <Button text="4" GridPane.rowIndex="3" GridPane.columnIndex="1" onMouseClicked="#handleDigit"/>
+    <Button text="5" GridPane.rowIndex="3" GridPane.columnIndex="2" onMouseClicked="#handleDigit"/>
+    <Button text="6" GridPane.rowIndex="3" GridPane.columnIndex="3" onMouseClicked="#handleDigit"/>
+    <Button text="1" GridPane.rowIndex="4" GridPane.columnIndex="1" onMouseClicked="#handleDigit"/>
+    <Button text="2" GridPane.rowIndex="4" GridPane.columnIndex="2" onMouseClicked="#handleDigit"/>
+    <Button text="3" GridPane.rowIndex="4" GridPane.columnIndex="3" onMouseClicked="#handleDigit"/>
+
+    <Button text="0" GridPane.rowIndex="5" GridPane.columnIndex="1" onMouseClicked="#handleDigit"/>
+
     <Button text="." GridPane.rowIndex="5" GridPane.columnIndex="2" onMouseClicked="#handle"/>
     <Button text="=" GridPane.rowIndex="5" GridPane.columnIndex="3" onMouseClicked="#handle"/>
 

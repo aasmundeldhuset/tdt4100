@@ -1,38 +1,36 @@
 package inheritance;
 
-public class PassengerCar extends TrainCar implements PassengerVehicle {
+import java.util.ArrayList;
+import java.util.List;
+
+public class PassengerCar extends TrainCar implements PassengerTransport {
     private int numPassengers;
-    
+
     public PassengerCar(String color, int deadWeight, int numPassengers) {
         super(color, deadWeight);
         this.numPassengers = numPassengers;
-    }
-    
-    public PassengerCar() {
-        this("green", 30000, 0);
     }
 
     public int getNumPassengers() {
         return numPassengers;
     }
 
-    public void setNumPassengers(int numPassengers) {
-        this.numPassengers = numPassengers;
-    }
-    
     @Override
-    public String toString() {
-        return super.toString() 
-                + " and contains " + numPassengers + " passengers";
+    public int getWeight() {
+        return getDeadWeight() + numPassengers * 75;
     }
-    
-    @Override
-    public String getType() {
-        return "passenger car";
-    }
-    
-    @Override
-    public int getTotalWeight() {
-        return getDeadWeight() + 75 * numPassengers;
+
+    public static void main(String[] args) {
+        List<TrainCar> cars = new ArrayList<>();
+        cars.add(new PassengerCar("red", 10000, 5));
+        for (TrainCar car : cars) {
+            System.out.println(car.getWeight());
+        }
+        List<Vehicle> vehicles = new ArrayList<>();
+        vehicles.add(cars.get(0));
+        vehicles.add(new Bus());
+        for (Vehicle vehicle : vehicles) {
+            vehicle.drive();
+        }
     }
 }

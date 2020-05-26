@@ -7,6 +7,7 @@ public class Celebrity {
     private String name;
     private int age;
     private int height;
+
     private List<CelebrityObserver> observers = new ArrayList<CelebrityObserver>();
 
     public Celebrity(String name, int age, int height) {
@@ -21,6 +22,10 @@ public class Celebrity {
         observers.add(observer);
     }
 
+    public void removeObserver(CelebrityObserver observer) {
+        observers.remove(observer);
+    }
+
     public String getName() {
         return name;
     }
@@ -31,8 +36,8 @@ public class Celebrity {
 
     public void birthday() {
         age++;
-        for (int i = 0; i < observers.size(); i++) {
-            observers.get(i).celebrityHasBirthday(this);
+        for (CelebrityObserver o : observers) {
+            o.celebrityHasBirthday(this);
         }
     }
 

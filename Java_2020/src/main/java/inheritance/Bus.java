@@ -1,21 +1,11 @@
 package inheritance;
 
-public class Bus implements PassengerVehicle, HasTires {
-    private int numPassengers;
-    
-    public Bus(int numPassengers) {
-        this.numPassengers = numPassengers;
-    }
-    
-    public int getNumPassengers() {
-        return numPassengers;
-    }
-    
-    public void setNumPassengers(int numPassengers) {
-        this.numPassengers = numPassengers;
-    }
-    
-    public int getNumTires() {
-        return 4;
-    }
+public class Bus implements Vehicle, PassengerTransport {
+	@Override public void drive() {
+		System.out.println("Honk!");
+	}
+
+	@Override public int getNumPassengers() {
+		return 0;
+	}
 }

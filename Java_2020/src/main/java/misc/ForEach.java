@@ -11,16 +11,13 @@ public class ForEach {
 		numbers.add(3);
 		numbers.add(9);
 
-		Iterable<Integer> iterable = numbers;
-		Iterator<Integer> iterator = iterable.iterator();
-		while (iterator.hasNext()) {
-			Integer boxed = iterator.next();
-			int number = boxed.intValue();
+		for (int number : numbers) {
 			System.out.println(number);
 		}
 
-		for (int number : numbers) {
-			System.out.println(number);
+		Iterator<Integer> iterator = numbers.iterator();
+		while (iterator.hasNext()) {
+			System.out.println(iterator.next());
 		}
 	}
 }

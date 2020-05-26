@@ -2,21 +2,22 @@ package misc;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Streams {
     public static void main(String[] args) {
         List<Integer> numbers = new ArrayList<>();
         numbers.add(3);
-        numbers.add(8);
+        numbers.add(8); // 64
         numbers.add(4);
         numbers.add(1);
-        numbers.add(9);
-        numbers.add(7);
+        numbers.add(9); // 81
+        numbers.add(7); // 49
 
-        numbers.stream()
+        int result = numbers.stream()
         	.filter(x -> x > 5)
     		.map(x -> x * x)
-    		.forEach(x -> System.out.println(x));
+			.reduce(0, (x, y) -> x * x + y);
 
 		List<Person> persons = new ArrayList<Person>();
 		persons.add(new Person("Aksel", 29, 190));

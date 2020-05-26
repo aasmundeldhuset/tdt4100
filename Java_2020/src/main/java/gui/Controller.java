@@ -6,16 +6,30 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 
+import java.util.Arrays;
+
 public class Controller implements EventHandler<MouseEvent> {
-	private DoubleProperty value = new SimpleDoubleProperty(3);
+	private DoubleProperty value = new SimpleDoubleProperty(0);
+	private boolean decimalMode;
+	private int decimalDivisor = 10;
 
 	@Override
 	public void handle(MouseEvent event) {
 		Button button = (Button) event.getSource();
-		int buttonValue = Integer.parseInt(button.textProperty().get());
-		value.set(buttonValue);
+		if (button.getText().equals(".")) {
+			decimalMode = true;
+		}
+	}
 
-		System.out.println(event);
+	public void handleDigit(MouseEvent event) {
+		Button button = (Button) event.getSource();
+		int digit = Integer.parseInt(button.getText());
+		if (decimalMode) {
+			value.setValue(value.getValue() + digit / (double) decimalDivisor);
+			decimalDivisor *= 10;
+		} else {
+			value.setValue(value.getValue() * 10 + digit);
+		}
 	}
 
 	public DoubleProperty valueProperty() {
