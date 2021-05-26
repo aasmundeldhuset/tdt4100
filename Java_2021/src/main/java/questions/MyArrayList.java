@@ -1,14 +1,11 @@
 package questions;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class MyArrayList implements Iterable<Double> {
-    // values ------> [ 9 5 1 7 3 0 0 0 ]
-    // used: 5
-    //   ^---------------------------+
-    // it -> MyArrayListIterator() list    nextIndex: 5
     private double[] values = new double[4];
-    public int used;
+    private int used;
 
     public int getSize() {
         return used;
@@ -23,6 +20,8 @@ public class MyArrayList implements Iterable<Double> {
             values = newValues;
         }
         values[used++] = value;
+        // values -> [9, 5, 1, 7, 3, 0, 0, 0]
+        // size: 5
     }
 
     public double get(int index) {
@@ -37,14 +36,22 @@ public class MyArrayList implements Iterable<Double> {
     public static void main(String[] args) {
         MyArrayList list = new MyArrayList();
         list.add(9);
-        list.add(5);
+        list.add(5.2);
         list.add(1);
         list.add(7);
         list.add(3);
+        for (int i = 0; i < list.getSize(); i++) {
+            System.out.println(list.get(i));
+        }
 
         for (double number : list) {
             System.out.println(number);
         }
+//        Iterator<Double> it = list.iterator();
+//        while (it.hasNext()) {
+//            Double number = it.next();
+//            System.out.println(number);
+//        }
     }
 }
 
@@ -63,6 +70,9 @@ class MyArrayListIterator implements Iterator<Double> {
 
     @Override
     public Double next() {
+        if (!hasNext()) {
+            throw new NoSuchElementException();
+        }
         double number = list.get(nextIndex);
         nextIndex++;
         return number;

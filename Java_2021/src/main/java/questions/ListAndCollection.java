@@ -5,25 +5,29 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
+import java.util.Vector;
 
 public class ListAndCollection {
 	public static void main(String[] args) {
-		ArrayList<String> names = new ArrayList<>(Arrays.asList(
-			"Nina", "Mohammad", "Maria", "Andreas"));
-		System.out.println(findInArrayList(names, "Maria"));
+		List<String> names = new Vector<>();
+		names.add("Nina");
+		names.add("Mohammad");
+		names.add("Maria");
+		names.add("Andreas");
+//		System.out.println(findInArrayList(names, "Maria"));
 		System.out.println(findInList(names, "Maria"));
 		System.out.println(findInCollection(names, "Maria"));
 		System.out.println(findInIterable(names, "Maria"));
 	}
 
-	public static int findInArrayList(ArrayList<String> strings, String value) {
-		for (int i = 0; i < strings.size(); i++) {
-			if (Objects.equals(strings.get(i), value)) {
-				return i;
-			}
-		}
-		return -1;
-	}
+//	public static int findInArrayList(ArrayList<String> strings, String value) {
+//		for (int i = 0; i < strings.size(); i++) {
+//			if (Objects.equals(strings.get(i), value)) {
+//				return i;
+//			}
+//		}
+//		return -1;
+//	}
 
 	public static int findInList(List<String> strings, String value) {
 		for (int i = 0; i < strings.size(); i++) {

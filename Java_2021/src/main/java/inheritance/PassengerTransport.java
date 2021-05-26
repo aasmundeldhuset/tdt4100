@@ -1,5 +1,5 @@
 package inheritance;
 
-public interface PassengerTransport  {
+public interface PassengerTransport {
 	int getNumPassengers();
 }

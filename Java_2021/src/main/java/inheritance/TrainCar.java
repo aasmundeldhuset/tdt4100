@@ -1,24 +1,38 @@
 package inheritance;
 
-public abstract class TrainCar implements Vehicle {
+public abstract class TrainCar {
     private String color;
-    private final int deadWeight;
+    private final int emptyWeight;
 
-    public TrainCar(String color, int deadWeight) {
+    public TrainCar(String color, int emptyWeight) {
         this.color = color;
-        if (deadWeight <= 0) {
+        if (emptyWeight <= 0) {
             throw new IllegalArgumentException();
         }
-        this.deadWeight = deadWeight;
+        this.emptyWeight = emptyWeight;
     }
 
-    public abstract int getWeight();
+    public TrainCar(int emptyWeight) {
+        this("red", emptyWeight);
+    }
 
-    public int getDeadWeight() {
-        return deadWeight;
+    //public abstract int getWeight();
+
+    public int getEmptyWeight() {
+        return emptyWeight;
+    }
+
+    public abstract int getTotalWeight();
+
+    public String getColor() {
+        return color;
     }
 
     public void drive() {
         System.out.println("Tooot!");
+    }
+
+    public String toString() {
+        return "A " + color + " train car that weighs " + emptyWeight + " kg";
     }
 }
