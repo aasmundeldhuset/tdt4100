@@ -1,6 +1,9 @@
-package misc;
+package streams;
+
+import misc.Person;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,11 +23,11 @@ public class Streams {
 			.reduce(0, (x, y) -> x * x + y);
 
 		List<Person> persons = new ArrayList<Person>();
-		persons.add(new Person("Aksel", 29, 190));
+		persons.add(new Person("Anne", 29, 190));
 		persons.add(new Person("Per", 23, 180));
-		persons.add(new Person("Karl", 18, 157));
+		persons.add(new Person("Supriya", 18, 157));
 		persons.add(new Person("Arne", 23, 187));
-		persons.add(new Person("Anne", 21, 175));
+		persons.add(new Person("Kari", 21, 175));
 
 		persons.stream()
 			.filter(p -> p.getAge() >= 20)
@@ -37,6 +40,8 @@ public class Streams {
 				else
 					return 0;
 			})
+			//.max((a, b) -> Double.compare(a.getHeight(), b.getHeight()))
+			//.collect(Collectors.maxBy(Comparator.comparing(Person::getHeight)))
 			.map(p -> p.getName())
 			.forEach(name -> System.out.println(name));
     }
