@@ -5,29 +5,24 @@ import misc.Person;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Streams {
     public static void main(String[] args) {
-        List<Integer> numbers = new ArrayList<>();
-        numbers.add(3);
-        numbers.add(8); // 64
-        numbers.add(4);
-        numbers.add(1);
-        numbers.add(9); // 81
-        numbers.add(7); // 49
+        List<Integer> numbers = List.of(3, 8, 4, 1, 9, 7);
 
         int result = numbers.stream()
         	.filter(x -> x > 5)
     		.map(x -> x * x)
 			.reduce(0, (x, y) -> x * x + y);
 
-		List<Person> persons = new ArrayList<Person>();
-		persons.add(new Person("Anne", 29, 190));
-		persons.add(new Person("Per", 23, 180));
-		persons.add(new Person("Supriya", 18, 157));
-		persons.add(new Person("Arne", 23, 187));
-		persons.add(new Person("Kari", 21, 175));
+		List<Person> persons = List.of(
+			new Person("Anne", 29, 190),
+			new Person("Per", 23, 180),
+			new Person("Supriya", 18, 157),
+			new Person("Arne", 23, 187),
+			new Person("Kari", 21, 175));
 
 		persons.stream()
 			.filter(p -> p.getAge() >= 20)

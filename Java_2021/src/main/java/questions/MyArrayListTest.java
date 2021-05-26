@@ -1,4 +1,4 @@
-package misc;
+package questions;
 
 import junit.framework.TestCase;
 

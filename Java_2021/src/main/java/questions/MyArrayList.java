@@ -1,6 +1,5 @@
-package misc;
+package questions;
 
-import java.util.Arrays;
 import java.util.Iterator;
 
 public class MyArrayList implements Iterable<Double> {

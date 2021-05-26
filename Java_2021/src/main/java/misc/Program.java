@@ -33,7 +33,7 @@ public class Program {
 
 
 
-//        misc.MyArrayList a = new misc.MyArrayList();
+//        questions.MyArrayList a = new questions.MyArrayList();
 //        a.add(5);
 //        a.add(3);
 //        a.add(9);

@@ -1,4 +1,4 @@
-package misc;
+package questions;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -22,7 +22,7 @@ public class IteratorProgram {
         }
     }
 
-    public void printIterator(Iterable<Integer> numbers) {
+    public void printIterable(Iterable<Integer> numbers) {
         for (int x : numbers) {
             System.out.println(x);
         }
